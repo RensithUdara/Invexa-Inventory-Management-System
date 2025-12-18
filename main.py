@@ -1,8 +1,8 @@
 import customtkinter as ctk
 from gui.ui import InventoryApp
 from models import initialize_database
+from seed_data import seed_database
 import hashlib
-import winreg
 import webbrowser
 
 COLORS = {
@@ -197,5 +197,6 @@ class ProductKeyPrompt:
 
 if __name__ == "__main__":
     initialize_database()
+    seed_database()
     app = InventoryApp()
     app.run()
