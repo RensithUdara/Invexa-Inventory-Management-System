@@ -49,7 +49,7 @@ class ProductKeyPrompt:
         
         man_label = ctk.CTkLabel(
             logo_frame,
-            text="Man",
+            text="Vexa",
             font=ctk.CTkFont(size=48, weight="bold", family="Verdana"),
             text_color=COLORS["white"]
         )
