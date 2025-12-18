@@ -18,7 +18,7 @@ COLORS = {
 class ProductKeyPrompt:
     def __init__(self):
         self.root = ctk.CTk()
-        self.root.title("Enter the Product Key to Unlock InMan")
+        self.root.title("Enter the Product Key to Unlock Invexa")
         self.root.geometry("550x600")
         self.root.configure(fg_color=COLORS['secondary_bg'])
         self.hashkey = "9f86d081884c7d6d9fbd8d4f7bbdd46d8d1d08e56d5e3a6b85b96f07b2b8f5eb"  # Test key: "TEST"
@@ -38,7 +38,7 @@ class ProductKeyPrompt:
         logo_frame = ctk.CTkFrame(container, fg_color="transparent")
         logo_frame.grid(row=0, column=0, padx=20, pady=(20, 10))  # Reduced bottom padding
         
-        # InMan logo with split colors
+        # Invexa logo with split colors
         in_label = ctk.CTkLabel(
             logo_frame,
             text="In",
@@ -121,7 +121,7 @@ class ProductKeyPrompt:
         # Unlock button
         self.unlock_button = ctk.CTkButton(
             self.form_frame,
-            text="Unlock InMan",
+            text="Unlock Invexa",
             command=self.check_product_key,
             width=350,
             height=45,
@@ -166,7 +166,7 @@ class ProductKeyPrompt:
         
         if hashed_product_key == self.hashkey:
             try:
-                reg_key = winreg.CreateKey(winreg.HKEY_CURRENT_USER, "Software\\InMan")
+                reg_key = winreg.CreateKey(winreg.HKEY_CURRENT_USER, "Software\\Invexa")
                 winreg.SetValueEx(reg_key, "ProductKey", 0, winreg.REG_SZ, hashed_product_key)
                 winreg.CloseKey(reg_key)
                 self.root.destroy()
@@ -182,7 +182,7 @@ class ProductKeyPrompt:
 
     def run(self):
         try:
-            reg_key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Software\\InMan")
+            reg_key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Software\\Invexa")
             product_key = winreg.QueryValueEx(reg_key, "ProductKey")[0]
             winreg.CloseKey(reg_key)
             if product_key == self.hashkey:
