@@ -196,5 +196,6 @@ class ProductKeyPrompt:
             self.root.mainloop()
 
 if __name__ == "__main__":
-    product_key_prompt = ProductKeyPrompt()
-    product_key_prompt.run()
+    initialize_database()
+    app = InventoryApp()
+    app.run()
