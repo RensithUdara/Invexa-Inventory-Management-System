@@ -165,3 +165,6 @@ output/
 *.xlsx
 node_modules
 .env
+.env.*
+.env.local
+.env.production
