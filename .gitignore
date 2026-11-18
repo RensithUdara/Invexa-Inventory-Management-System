@@ -164,4 +164,4 @@ cython_debug/
 output/
 *.xlsx
 node_modules
-.env
+config.bat
