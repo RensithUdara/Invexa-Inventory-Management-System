@@ -1,4 +1,3 @@
-import utils.session
 import customtkinter as ctk
 from gui.ui import InventoryApp
 from models import initialize_database
